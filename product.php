@@ -41,7 +41,7 @@
 					<ul class="bread-crumbs">
 						<li class="bread-crumb"><a class="bread-crumb__link" href="index.html">Главная</a></li>
 						<li class="bread-crumb"><a class="bread-crumb__link" href="catalog.html">Каталог</a></li>
-						<li class="bread-crumb"><a class="bread-crumb__link" href="#">Электронные сигареты</a></li>
+						<li class="bread-crumb"><a class="bread-crumb__link" href="catalog.php?id=<?=$product['main_category_id']?>">Электронные сигареты</a></li>
 						<li class="bread-crumb bread-crumb_current"><?=$product['name'] ?></li>
 					</ul>
 				</nav>
@@ -91,30 +91,9 @@
 			</div>
 		</div>
 	</div>
-	<footer class="page-footer">
-		<div class="wrapper page-footer__wrapper">
-			<div class="copyright">
-				<span class="copyright__part copyright__lifetime">Copyright ©2007-2010</span>
-				<span class="copyright__part copyright__company-lifetime"><b>© "Company"</b>, 2010</span>
-				<img class="copyright__image" src="img/logo.png" alt="Company-logo">
-				<span class="copyright__part copyrhigt__company-name">Company</span>
-			</div>
-			<nav class="footer-nav">
-				<ul class="footer-nav__list">
-					<li class="footer-nav__list-item"><a class="footer-nav__link" href="index.html">Главная</a></li>
-					<li class="footer-nav__list-item"><a class="footer-nav__link" href="catalog.html">Каталог</a></li>
-					<li class="footer-nav__list-item"><a class="footer-nav__link" href="#">О компании</a></li>
-					<li class="footer-nav__list-item"><a class="footer-nav__link" href="#">Новости</a></li>
-					<li class="footer-nav__list-item"><a class="footer-nav__link" href="shipment.html">Доставка и оплата</a></li>
-					<li class="footer-nav__list-item"><a class="footer-nav__link" href="contacts.html">Контакты</a></li>
-				</ul>
-			</nav>
-			<div class="developer">
-				<span class="developer__ref">Разработка сайта - <a class="developer__link" href="#">ITConstruct</a></span>
-				<img class="counter" src="img/counter.png" alt="Page-counter">
-			</div>
-		</div>
-	</footer>
+    <?php
+    require "application/views/includes/template_footer.php";
+    ?>
 </body>
 
 </html>

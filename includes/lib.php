@@ -126,13 +126,24 @@ function selectProductsFilteredByPrice($costFrom, $costTo){
 
 function getProductById($id){
     global $link;
-    $sql = "select * from products where id = $id";
+    $sql = "select * from products where products.id = $id";
     if(!$result = mysqli_query($link, $sql)){
         return false;
-	}
-	$item = mysqli_fetch_array($result);
-	//mysqli_free_result($result);
-	return $item;
+    }
+    $item = mysqli_fetch_array($result);
+    //mysqli_free_result($result);
+    return $item;
+}
+
+function getNewsById($id){
+    global $link;
+    $sql = "select * from news where id = $id";
+    if(!$result = mysqli_query($link, $sql)){
+        return false;
+    }
+    $item = mysqli_fetch_array($result);
+    //mysqli_free_result($result);
+    return $item;
 }
 
 function putFeedback($name, $email, $phone, $request_text){
