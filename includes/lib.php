@@ -22,7 +22,7 @@ function selectAllCategories(){
 
 function selectAllNews(){
 	global $link;
-	$sql = 'select * from news';
+	$sql = 'select * from news order by date desc limit 10';
 	if(!$result = mysqli_query($link, $sql)){
 		return false;
 	}
@@ -42,7 +42,7 @@ function selectAllProducts(){
 	return $items;
 }
 
-function getProductById(int $id){
+function getProductById($id){
 	global $link;
 	$sql = "select * from products where id = $id";
 	if(!$result = mysqli_query($link, $sql)){
@@ -51,4 +51,14 @@ function getProductById(int $id){
 	$item = mysqli_fetch_array($result);
 	//mysqli_free_result($result);
 	return $item;
+}
+
+function putFeedback($name, $email, $phone, $request_text){
+    global $link;
+    $sql = "insert into feedbacks (name, email, phone, request_text) values('$name', '$email', '$phone', '$request_text')";
+    if(!$result = mysqli_query($link, $sql)){
+        echo mysqli_error($link);
+        return false;
+    }
+    return true;
 }

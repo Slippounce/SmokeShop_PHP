@@ -40,16 +40,16 @@
 				<ul class="categories categories__reposition">
 					<?php require "application/models/news.php"?>
 				</ul>
-				<ul class="paginator catalog-page__paginator">
-					<li class="paginator__elem"><a href="#" class="paginator__link">1</a></li>
-					<li class="paginator__elem"><a href="#" class="paginator__link">2</a></li>
-					<li class="paginator__elem"><a href="#" class="paginator__link">3</a></li>
-					<li class="paginator__elem paginator__elem_current"><span class="paginator__link">4</span></li>
-					<li class="paginator__elem"><a href="#" class="paginator__link">5</a></li>
-					<li class="paginator__elem"><a href="#" class="paginator__link">6</a></li>
-					<li class="paginator__elem"><a href="#" class="paginator__link">7</a></li>
-					<li class="paginator__elem paginator__elem_next"><a href="#" class="paginator__link">Следующая страница</a></li>
-				</ul>
+<!--				<ul class="paginator catalog-page__paginator">-->
+<!--					<li class="paginator__elem"><a href="#" class="paginator__link">1</a></li>-->
+<!--					<li class="paginator__elem"><a href="#" class="paginator__link">2</a></li>-->
+<!--					<li class="paginator__elem"><a href="#" class="paginator__link">3</a></li>-->
+<!--					<li class="paginator__elem paginator__elem_current"><span class="paginator__link">4</span></li>-->
+<!--					<li class="paginator__elem"><a href="#" class="paginator__link">5</a></li>-->
+<!--					<li class="paginator__elem"><a href="#" class="paginator__link">6</a></li>-->
+<!--					<li class="paginator__elem"><a href="#" class="paginator__link">7</a></li>-->
+<!--					<li class="paginator__elem paginator__elem_next"><a href="#" class="paginator__link">Следующая страница</a></li>-->
+<!--				</ul>-->
 			</main>
 			<div class="sidebar">
 				<?php require "application/views/catalog.php"?>

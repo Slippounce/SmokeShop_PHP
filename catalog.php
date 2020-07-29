@@ -60,7 +60,7 @@
 					foreach($products as $item){
 					?>
 					<li class="category good-piece">
-						<a class="category__link" href="product.html">
+						<a class="category__link" href="product.php?id=<?= $item['id']?>">
 							<img class="category__image good__image" src="<?= $item['image']?>" alt="category-image-1">
 							<span class="category__name-container good_name"><span class="category__name-inner"><?= $item['name']?></span></span>
 						</a>
