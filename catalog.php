@@ -12,8 +12,15 @@ $news = selectAllNews();
 if($_GET['cost-from'] || $_GET['cost-to']){
     $products = selectProductsFilteredByPrice(clearInt($_GET['cost-from']), clearInt($_GET['cost-to']));
 }else{
-    $products = selectAllProducts();
+    if($_GET['id']){
+        $products = getProductByCategory(clearInt($_GET['id']));
+    }else {
+        $products = selectAllProducts();
+    }
 }
+
+
+
 
 if($categories === false || $news === false || $products === false){
     echo "ERROR!";
