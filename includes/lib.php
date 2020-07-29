@@ -31,44 +31,38 @@ function selectAllNews(){
     return $items;
 }
 
-//function selectProducts($costFrom, $costTo, $categoryId, $page){
-//    global $link;
-//    $sql = "select id, name, image, price, description, main_category_id from products";
-//    if($costFrom || $costTo || $categoryId || $page){
-//        $sql = $sql." where ";
-//        $addAnd = false;
-//        if($costFrom){
-//            $sql = $sql."price >= $costFrom";
-//            if(!$addAnd){
-//                true;
-//            }
-//        }
-//        if($costTo){
-//            if($addAnd){
-//                $sql = $sql." and ";
-//            }
-//            $sql = $sql."price <= $costTo";
-//            if(!$addAnd){
-//                true;
-//            }
-//        }
-//        if($categoryId){
-//            if($addAnd){
-//                $sql = $sql." and ";
-//            }
-//            $sql = $sql."category = ";
-//
-//            if(!$addAnd){
-//                true;
-//            }
-//        }
-////        if($page){
-////
-////            if(!$addAnd){
-////                true;
-////            }
-////        }
-//    }
+function selectProducts($costFrom, $costTo, $categoryId){
+    global $link;
+    $sql = "select id, name, image, price, description, main_category_id from products ";
+    if($categoryId){
+        $sql = $sql." inner join `product-category` on products.id = `product-category`.product_id ";
+    }
+    if($costFrom || $costTo || $categoryId){
+        $sql = $sql." where ";
+        $addAnd = false;
+        if($costFrom){
+            $sql = $sql."price >= $costFrom";
+            if(!$addAnd){
+                $addAnd = true;
+            }
+        }
+        if($costTo){
+            if($addAnd){
+                $sql = $sql." and ";
+            }
+            $sql = $sql."price <= $costTo";
+            if(!$addAnd){
+                $addAnd = true;
+            }
+        }
+        if($categoryId){
+            if($addAnd){
+                $sql = $sql." and ";
+            }
+            $sql = $sql."category_id = $categoryId";
+
+        }
+    }
 //    if($costFrom && $costTo){
 //        $sql = $sql."price >= $costFrom and price <= $costTo";
 //    }else{
@@ -79,13 +73,13 @@ function selectAllNews(){
 //            $sql = $sql." price <= $costTo";
 //        }
 //    }
-//    if(!$result = mysqli_query($link, $sql)){
-//        return false;
-//    }
-//    $items = mysqli_fetch_all($result, MYSQLI_ASSOC);
-//    mysqli_free_result($result);
-//    return $items;
-//}
+    if(!$result = mysqli_query($link, $sql)){
+        return false;
+    }
+    $items = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    mysqli_free_result($result);
+    return $items;
+}
 
 function getProductByCategory($category_id){
     global $link;
