@@ -1,52 +1,73 @@
 <?php
-    //сюда можно сложить какие-то вспомогательные функции, функции для подключения к БД с возвратом дескриптора
+//сюда можно сложить какие-то вспомогательные функции, функции для подключения к БД с возвратом дескриптора
 function clearStr($data){
-	global $link;
-	$data = trim(strip_tags($data));
-	return mysqli_real_escape_string($link, $data);
+    global $link;
+    $data = trim(strip_tags($data));
+    return mysqli_real_escape_string($link, $data);
 }	
 function clearInt($data){
-	return abs((int)$data);
+    return abs((int)$data);
 }
 
 function selectAllCategories(){
-	global $link;
-	$sql = 'Select * from categories';
-	if(!$result = mysqli_query($link, $sql)){
-		return false;
-	}
-	$items = mysqli_fetch_all($result, MYSQLI_ASSOC);
-	mysqli_free_result($result);
-	return $items;
+    global $link;
+    $sql = 'Select * from categories';
+    if(!$result = mysqli_query($link, $sql)){
+        return false;
+    }
+    $items = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    mysqli_free_result($result);
+    return $items;
 }
 
 function selectAllNews(){
-	global $link;
-	$sql = 'select * from news order by date desc limit 10';
-	if(!$result = mysqli_query($link, $sql)){
-		return false;
-	}
-	$items = mysqli_fetch_all($result, MYSQLI_ASSOC);
-	mysqli_free_result($result);
-	return $items;
+    global $link;
+    $sql = 'select * from news order by date desc limit 10';
+    if(!$result = mysqli_query($link, $sql)){
+        return false;
+    }
+    $items = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    mysqli_free_result($result);
+    return $items;
 }
 
 function selectAllProducts(){
-	global $link;
-	$sql = 'select * from products';
-	if(!$result = mysqli_query($link, $sql)){
-		return false;
-	}
-	$items = mysqli_fetch_all($result, MYSQLI_ASSOC);
-	mysqli_free_result($result);
-	return $items;
+    global $link;
+    $sql = 'select * from products';
+    if(!$result = mysqli_query($link, $sql)){
+        return false;
+    }
+    $items = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    mysqli_free_result($result);
+    return $items;
+}
+
+function selectProductsFilteredByPrice($costFrom, $costTo){
+    global $link;
+    $sql = "select id, name, image, price, description, main_category_id from products where ";
+    if($costFrom && $costTo){
+        $sql = $sql."price >= $costFrom and price <= $costTo";
+    }else{
+        if($costFrom){
+            $sql = $sql." price => $costFrom";
+        }
+        if($costTo){
+            $sql = $sql." price <= $costTo";
+        }
+    }
+    if(!$result = mysqli_query($link, $sql)){
+        return false;
+    }
+    $items = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    mysqli_free_result($result);
+    return $items;
 }
 
 function getProductById($id){
-	global $link;
-	$sql = "select * from products where id = $id";
-	if(!$result = mysqli_query($link, $sql)){
-		return false;
+    global $link;
+    $sql = "select * from products where id = $id";
+    if(!$result = mysqli_query($link, $sql)){
+        return false;
 	}
 	$item = mysqli_fetch_array($result);
 	//mysqli_free_result($result);
