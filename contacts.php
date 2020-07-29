@@ -99,7 +99,7 @@
 						<p class="error-message">
 							Поле «Пароль» должно быть заполнено
 						</p>
-					</aside>
+					</aside> 
 					<form method="POST" class="registration-form" name="contats-page__feedback-form">
 						<div class="feedback-form__row">
 							<label class="inner-label" for="feedback-author">

@@ -23,7 +23,7 @@
 				<ul class="menu-togglable">
 					<li class="header-nav-item"><span><span class="header-nav-item__link header-nav-item__link_current">Главная</span></span></li>
 					<li class="header-nav-item">
-						<span class="header-nav-item__container-for-link"><a class="header-nav-item__link" href="catalog.html">Каталог</a></span>
+						<span class="header-nav-item__container-for-link"><a class="header-nav-item__link" href="catalog.php">Каталог</a></span>
 						<ul class="sub-menu">
 							<li class="sub-menu__list-item"><a class="sub-menu__link" href="#">Электронные сигареты</a></li>
 							<li class="sub-menu__list-item"><a class="sub-menu__link" href="#">Трубки</a></li>
@@ -35,10 +35,10 @@
 							<li class="sub-menu__list-item"><a class="sub-menu__link" href="#">Подарочные наборы</a></li>
 						</ul>
 					</li>
-					<li class="header-nav-item"><span><a class="header-nav-item__link" href="#">О компании</a></span></li>
-					<li class="header-nav-item"><span><a class="header-nav-item__link" href="#">Новости</a></span></li>
-					<li class="header-nav-item"><span><a class="header-nav-item__link" href="shipment.html">Доставка и оплата</a></span></li>
-					<li class="header-nav-item"><span><a class="header-nav-item__link" href="contacts.html">Контакты</a></span></li>
+					<li class="header-nav-item"><span><a class="header-nav-item__link" href="about.php">О компании</a></span></li>
+					<li class="header-nav-item"><span><a class="header-nav-item__link" href="news.php">Новости</a></span></li>
+					<li class="header-nav-item"><span><a class="header-nav-item__link" href="paydelivery.php">Доставка и оплата</a></span></li>
+					<li class="header-nav-item"><span><a class="header-nav-item__link" href="contacts.php">Контакты</a></span></li>
 				</ul>
 			</div>
 		</nav>
