@@ -7,6 +7,9 @@
 		echo "ERROR!";
 		exit;
 	}
+	if(count($_GET) != 0){
+	    send404();
+    }
 
 ?>
 	<?php 
