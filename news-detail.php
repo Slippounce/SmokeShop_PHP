@@ -1,6 +1,9 @@
 <?php
 require "includes/lib.php";
 require "includes/config.php";
+if(!$_GET['id'] || !is_numeric($_GET['id'])){
+        send404();
+}
 require "application/models/news-detail.php";
 ?>
 
