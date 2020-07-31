@@ -75,16 +75,6 @@ function selectProducts($costFrom, $costTo, $categoryId, $page){
     return $items;
 }
 
-function getProductById($id){
-    global $link;
-    $sql = "select * from products where products.id = $id";
-    if(!$result = mysqli_query($link, $sql)){
-        return false;
-    }
-    $item = mysqli_fetch_array($result);
-    //mysqli_free_result($result);
-    return $item;
-}
 
 
 
