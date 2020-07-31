@@ -2,16 +2,8 @@
 	require "includes/lib.php";
 	require "includes/config.php";
 	//TODO: some argumants check?
-	$categories = selectAllCategories();
-	$news = selectSidebarNews();
-	if($categories === false || $news === false){
-		echo "ERROR!";
-		exit;
-	}
-	if(!count($categories) || !count($news)){
-		echo "EMPTY!";
-		exit;
-	}
+
+	require "application/models/index.php";
 
 ?>
 	<?php 
