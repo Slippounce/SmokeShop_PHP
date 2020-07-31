@@ -10,7 +10,7 @@
     </nav>
     <ul class="categories categories__reposition">
         <?php
-        foreach($news as $item){
+        foreach($newsCatalog as $item){
             ?>
             <li class="news-item">
                 <a class="news-item__link" href="news-detail.php?id=<?= $item['id']?>">

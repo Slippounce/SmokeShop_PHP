@@ -2,7 +2,9 @@
 require "includes/lib.php";
 require "includes/config.php";
 if(count($_GET) != 0){
-	send404();
+	if(count($_GET) != 1 || !$_GET['page']) {
+		send404();
+	}
 }
 require "application/models/news.php";
 ?>
