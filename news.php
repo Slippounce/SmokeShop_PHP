@@ -10,10 +10,7 @@
 ?>
 
 	<?php 
-		require "application/views/includes/template_header.php"
-	?>
-
-
-	<?php 
-		require "application/views/includes/template_footer.php";
+		require "application/views/includes/template_header.php";
+        require "application/views/news.php";
+        require "application/views/includes/template_footer.php";
 	?>
