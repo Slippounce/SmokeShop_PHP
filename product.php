@@ -8,7 +8,7 @@
 		exit;
 	}
 	$categories = selectAllCategories();
-	$news = selectAllNews();
+	$news = selectSidebarNews();
 	if($categories === false || $news === false){
 		echo "ERROR!";
 		exit;

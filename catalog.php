@@ -1,32 +1,40 @@
 <?php
-    //контроллер для списка товаров. проверяем корректность параметров и подключаем соответствующую модель
-	require "includes/lib.php";
-	require "includes/config.php";
-    if($_SERVER['REQUEST_METHOD'] === 'POST') {
-        header("Location: catalog.php?cost-from={$_POST['cost-from']}&cost-to={$_POST['cost-to']}");
-        exit();
-    }
+//контроллер для списка товаров. проверяем корректность параметров и подключаем соответствующую модель
+require "includes/lib.php";
+require "includes/config.php";
+// проверить параметры
+if($_GET['id'] && !is_numeric($_GET['id'])){
+    send404();
+}
+if($_GET['price-from'] && !is_numeric($_GET['price-from'])){
+    send404();
+}
+if($_GET['price-to'] && !is_numeric($_GET['price-to'])){
+    send404();
+}
+if($_GET['page'] && !is_numeric($_GET['page'])){
+    send404();
+}
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    header("Location: catalog.php?cost-from={$_POST['cost-from']}&cost-to={$_POST['cost-to']}");
+    exit();
+}
 
+require "application/models/catalog.php";
+
+$pageCurrent = $_GET['page']?clearInt($_GET['page']):1;
 $categories = selectAllCategories();
-$news = selectAllNews();
-$products = selectProducts(clearInt($_GET['cost-from']), clearInt($_GET['cost-to']), clearInt($_GET['id']));
-//if($_GET['cost-from'] || $_GET['cost-to']){
-//    $products = selectProductsFilteredByPrice(clearInt($_GET['cost-from']), clearInt($_GET['cost-to']));
-//}else{
-//    if($_GET['id']){
-//        $products = getProductByCategory(clearInt($_GET['id']));
-//    }else {
-//        $products = selectAllProducts();
-//    }
-//}
-
-
-
+$news = selectSidebarNews();
+$products = selectProducts(clearInt($_GET['cost-from']), clearInt($_GET['cost-to']), clearInt($_GET['id']), $pageCurrent);
 
 if($categories === false || $news === false || $products === false){
+    global $link;
+    echo  mysqli_error($link);
     echo "ERROR!";
     exit;
 }
+
+//TODO: Как посчитать общее кол-во страниц, что делать если page > чем максимально возможное
 ?>
 
 <!DOCTYPE html>
@@ -70,9 +78,9 @@ require "application/views/includes/template_header.php"
             </form>
             <ul class="categories categories__reposition">
                 <?php
-                $pageCurrent = $_GET['page']?clearInt($_GET['page']):1;
+
                 $pageNumber = floor(count($products) / 6) + 1;
-                $products = array_slice($products, ($pageCurrent-1)*6, 6);
+//                $products = array_slice($products, ($pageCurrent-1)*6, 6);
                 foreach($products as $item){
                     ?>
                     <li class="category good-piece">
@@ -100,18 +108,18 @@ require "application/views/includes/template_header.php"
                     <?
                 }
                 ?>
-<!--                <li class="paginator__elem"><a href="#" class="paginator__link">1</a></li>-->
-<!--                <li class="paginator__elem"><a href="#" class="paginator__link">2</a></li>-->
-<!--                <li class="paginator__elem"><a href="#" class="paginator__link">3</a></li>-->
-<!--                <li class="paginator__elem paginator__elem_current"><span class="paginator__link">4</span></li>-->
-<!--                <li class="paginator__elem"><a href="#" class="paginator__link">5</a></li>-->
-<!--                <li class="paginator__elem"><a href="#" class="paginator__link">6</a></li>-->
-<!--                <li class="paginator__elem"><a href="#" class="paginator__link">7</a></li>-->
+                <!--                <li class="paginator__elem"><a href="#" class="paginator__link">1</a></li>-->
+                <!--                <li class="paginator__elem"><a href="#" class="paginator__link">2</a></li>-->
+                <!--                <li class="paginator__elem"><a href="#" class="paginator__link">3</a></li>-->
+                <!--                <li class="paginator__elem paginator__elem_current"><span class="paginator__link">4</span></li>-->
+                <!--                <li class="paginator__elem"><a href="#" class="paginator__link">5</a></li>-->
+                <!--                <li class="paginator__elem"><a href="#" class="paginator__link">6</a></li>-->
+                <!--                <li class="paginator__elem"><a href="#" class="paginator__link">7</a></li>-->
                 <?php
                 if($pageCurrent < $pageNumber){
                     ?>
                     <li class="paginator__elem paginator__elem_next"><a href="<?=$_SERVER['QUERY_STRING']."catalog.php?page=".strval($pageCurrent+1)?>" class="paginator__link">Следующая страница</a></li>
-                <?
+                    <?
                 }
                 ?>
 
