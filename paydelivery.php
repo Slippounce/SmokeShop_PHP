@@ -12,7 +12,6 @@
 	<?php 
 		require "application/views/includes/template_header.php"
 	?>
-
 			<main class="inside-content">
 				<article class="shipment-article">
 					<h1>Доставка</h1>
