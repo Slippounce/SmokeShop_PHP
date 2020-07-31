@@ -15,10 +15,6 @@ if($_GET['price-to'] && !is_numeric($_GET['price-to'])){
 if($_GET['page'] && !is_numeric($_GET['page'])){
     send404();
 }
-if($_SERVER['REQUEST_METHOD'] === 'POST') {
-    header("Location: catalog.php?cost-from={$_POST['cost-from']}&cost-to={$_POST['cost-to']}");
-    exit();
-}
 
 require "application/models/catalog.php";
 
@@ -65,7 +61,7 @@ require "application/views/includes/template_header.php"
                     <li class="bread-crumb bread-crumb_current">Каталог</li>
                 </ul>
             </nav>
-            <form class="search-filter" id="catalog-page__search-filter-1" method="POST">
+            <form class="search-filter" id="catalog-page__search-filter-1" method="GET">
                 <span class="search-filter__item">
                     <label class="search-filter__label" for="cost-from">Цена</label>
                     <input class="search-filter__input" step="0.01" type="number" min="0" name="cost-from" id="cost-from" placeholder="от" value="<?= $_GET['cost-from']?>">
