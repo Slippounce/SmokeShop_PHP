@@ -1,3 +1,10 @@
+
+<div class="sidebar">
+    <?php require "application/views/catalog.php"?>
+    <?php require "application/views/news.php"?>
+</div>
+</div>
+</div>
 <footer class="page-footer">
 		<div class="wrapper page-footer__wrapper">
 			<div class="copyright">
@@ -22,3 +29,4 @@
 			</div>
 		</div>
 	</footer>
+</body>
