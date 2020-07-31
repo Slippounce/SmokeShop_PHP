@@ -6,13 +6,7 @@ if($_GET['id']){
 }else{
     send404();
 }
-$categories = selectAllCategories();
-$news = selectSidebarNews();
-if($categories === false || $news === false){
-    echo "ERROR!";
-    exit;
-}
-
+require "application/models/product.php";
 ?>
 <?php
 require "application/views/includes/template_header.php";
