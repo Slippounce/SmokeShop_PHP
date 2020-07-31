@@ -1,6 +1,9 @@
 <?php
 require "includes/lib.php";
 require "includes/config.php";
+if(count($_GET) != 0){
+    send404();
+}
 $categories = selectAllCategories();
 $news = selectSidebarNews();
 if($categories === false || $news === false){
