@@ -1,6 +1,17 @@
 
 <div class="sidebar">
-    <?php require "application/views/catalog.php"?>
+    <section class="catalog">
+        <h2 class="sidebar__headline">Каталог</h2>
+        <ul class="catalog-list">
+            <?php
+            foreach($categories as $item){
+                ?>
+                <li class="catalog-list__item"><a class="catalog-list__link" href="catalog.php?id=<?= $item['id']?>"><?= $item['name']?></a></li>
+                <?php
+            }
+            ?>
+        </ul>
+    </section>
     <?php require "application/views/news.php"?>
 </div>
 </div>
