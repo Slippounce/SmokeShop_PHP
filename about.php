@@ -39,5 +39,3 @@ require "application/views/includes/template_header.php"
 <?php
 require "application/views/includes/template_footer.php";
 ?>
-
-</html>

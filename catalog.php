@@ -24,5 +24,3 @@ require "application/views/includes/template_header.php";
 require "application/views/catalog.php";
 require "application/views/includes/template_footer.php";
 ?>
-
-</html>

@@ -38,5 +38,3 @@
 		require "application/views/includes/template_footer.php";
 	?>
 
-
-</html>
