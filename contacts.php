@@ -4,14 +4,9 @@ require "includes/config.php";
 
 //TODO:add parameters check
 if(count($_GET) != 0){
-    send404();
-}
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    //write into db
-    header("Location: contacts.php?fc=true");
-    putFeedback(clearStr($_POST['feedback-author']),clearStr($_POST['email']),
-        clearStr($_POST['phone']),clearStr($_POST['feedback-text']));
-    exit();
+    if(count($_GET) != 1 || !$_GET['fc']) {
+        send404();
+    }
 }
 require "application/models/contacts.php"
 ?>

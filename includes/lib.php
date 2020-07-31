@@ -97,15 +97,7 @@ function getNewsById($id){
     return $item;
 }
 
-function putFeedback($name, $email, $phone, $request_text){
-    global $link;
-    $sql = "insert into feedbacks (name, email, phone, request_text) values('$name', '$email', '$phone', '$request_text')";
-    if(!$result = mysqli_query($link, $sql)){
-        echo mysqli_error($link);
-        return false;
-    }
-    return true;
-}
+
 
 function send404(){
     header("Location: 404.php");
