@@ -44,14 +44,14 @@
         }
         for ($i = $istart; $i <= $pageNumber && $i <= $istart + 6; $i++){
             ?>
-            <li class="paginator__elem"><a href="<?=$_SERVER['QUERY_STRING']."catalog.php?page="."$i";?>" class="paginator__link"><?=$i?></a></li>
+            <li class="paginator__elem"><a href="<?="catalog.php?page="."$i";?>" class="paginator__link"><?=$i?></a></li>
             <?
         }
         ?>
         <?php
         if($pageCurrent < $pageNumber){
             ?>
-            <li class="paginator__elem paginator__elem_next"><a href="<?=$_SERVER['QUERY_STRING']."catalog.php?page=".strval($pageCurrent+1)?>" class="paginator__link">Следующая страница</a></li>
+            <li class="paginator__elem paginator__elem_next"><a href="<?="catalog.php?page=".strval($pageCurrent+1)?>" class="paginator__link">Следующая страница</a></li>
             <?
         }
         ?>
