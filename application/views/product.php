@@ -1,3 +1,10 @@
+<?php
+if($categories === false || $news === false){
+    echo "ERROR!";
+    exit;
+}
+?>
+
 <main class="inside-content">
     <nav class="bread-crumbs-container product__bread-crumbs">
         <ul class="bread-crumbs">
@@ -45,5 +52,4 @@
             </p>
         </article>
     </section>
-
 </main>
