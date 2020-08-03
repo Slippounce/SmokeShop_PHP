@@ -47,23 +47,22 @@ require "includes/config.php";
                             <span class="header-nav-item__container-for-link">
                                 <a class="header-nav-item__link <?php if($key === $currentName) echo "header-nav-item__link_current";?>" href="<?=$value?>"><?= $key?></a>
                             </span>
+                            <?php
+                            if($key === "Каталог"){
+                                ?><ul class="sub-menu"><?
+                                foreach ($categories as $item){
+                                    ?>
+                                    <li class="sub-menu__list-item"><a class="sub-menu__link" href="<?="catalog.php?id=".$item['id']?>"><?=$item['name']?></a></li>
+                                    <?
+                                }
+                                ?></ul><?
+                            }
+                            ?>
                         </li>
-<!--                        <li class="header-nav-item"><span><span class="header-nav-item__link" href="--><?//=$value?><!--">></span></span></li>-->
-
-
-
                         <?
                     }
                     ?>
-<!--                    <li class="header-nav-item"><span><span class="header-nav-item__link header-nav-item__link_current">Главная</span></span></li>-->
-<!--                    <li class="header-nav-item">-->
-<!--						<span class="header-nav-item__container-for-link"><a class="header-nav-item__link" href="catalog.php">Каталог</a></span>-->
-<!--					</li>-->
-<!--					<li class="header-nav-item"><span><a class="header-nav-item__link" href="about.php">О компании</a></span></li>-->
-<!--					<li class="header-nav-item"><span><a class="header-nav-item__link" href="news.php">Новости</a></span></li>-->
-<!--					<li class="header-nav-item"><span><a class="header-nav-item__link" href="paydelivery.php">Доставка и оплата</a></span></li>-->
-<!--					<li class="header-nav-item"><span><a class="header-nav-item__link" href="contacts.php">Контакты</a></span></li>-->
-				</ul>
+                </ul>
 			</div>
 		</nav>
 	</header>

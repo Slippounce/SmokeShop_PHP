@@ -39,7 +39,6 @@ function selectProducts($costFrom, $costTo, $categoryId, $page){
     mysqli_free_result($result);
     return $items;
 }
-
 $currentName = 'Каталог';
 $pageCurrent = $_GET['page']?clearInt($_GET['page']):1;
 $categories = selectAllCategories();
