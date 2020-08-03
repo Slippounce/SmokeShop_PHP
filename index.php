@@ -1,6 +1,7 @@
 <?php
 require "includes/lib.php";
 require "includes/config.php";
+require "includes/dbconn.php";
 //TODO: some argumants check?
 if(count($_GET) != 0){
 	send404();
