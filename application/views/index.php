@@ -1,3 +1,10 @@
+<?php
+if($categories === false || $news === false){
+    echo "ERROR!";
+    exit;
+}
+?>
+
 <main class="categories">
     <h1 class="invisible">Company - Электронные сигареты</h1>
     <ul class="categories">
