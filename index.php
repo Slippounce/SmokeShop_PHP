@@ -3,9 +3,7 @@ require "includes/config.php";
 require "includes/lib.php";
 require "includes/dbconn.php";
 //TODO: some argumants check?
-if(count($_GET) != 0){
-	send404();
-}
+
 require "application/models/index.php";
 require "application/views/includes/template_header.php";
 require "application/views/index.php";

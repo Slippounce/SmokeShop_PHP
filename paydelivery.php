@@ -9,9 +9,6 @@ if($categories === false || $news === false){
     echo "ERROR!";
     exit;
 }
-if(count($_GET) != 0){
-    send404();
-}
 require "application/views/includes/template_header.php"
 ?>
 <main class="inside-content">
