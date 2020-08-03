@@ -9,7 +9,7 @@ function selectNews($page){
     mysqli_free_result($result);
     return $items;
 }
-
+$currentName = 'Новости';
 $categories = selectAllCategories();
 $news = selectSidebarNews();
 $newsCatalog = selectNews($_GET['page']?clearInt($_GET['page']):1);

@@ -40,6 +40,7 @@ function selectProducts($costFrom, $costTo, $categoryId, $page){
     return $items;
 }
 
+$currentName = 'Каталог';
 $pageCurrent = $_GET['page']?clearInt($_GET['page']):1;
 $categories = selectAllCategories();
 $news = selectSidebarNews();

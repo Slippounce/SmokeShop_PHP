@@ -10,6 +10,12 @@ const DB_NAME = "showcase";
 const PRODUCTS_ON_PAGE = 6;
 const NEWS_ON_PAGE = 9;
 const NEWS_ON_SIDEBAR = 6;
+$menu = array("Главная" => "index.php",
+    "Каталог" => "catalog.php",
+    "О компании" => "about.php",
+    "Новости" => "news.php",
+    "Доставка и оплата" => "paydelivery.php",
+    "Контакты" => "contacts.php");
 //const ORDERS_LOG = "orders.log";
 	
 $link = mysqli_connect(DB_HOST, DB_LOGIN, DB_PASSWORD, DB_NAME);

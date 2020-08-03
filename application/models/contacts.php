@@ -16,6 +16,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         clearStr($_POST['phone']),clearStr($_POST['feedback-text']));
     exit();
 }
+$currentName = 'Контакты';
 $categories = selectAllCategories();
 $news = selectSidebarNews();
 if($categories === false || $news === false){

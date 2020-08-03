@@ -16,6 +16,7 @@ $product = getProductById((int)$_GET['id']);
 if(!$product){
     send404();
 }
+$currentName = 'Каталог';
 $categories = selectAllCategories();
 $news = selectSidebarNews();
 if($categories === false || $news === false){

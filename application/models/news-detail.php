@@ -9,7 +9,7 @@ function getNewsById($id){
     //mysqli_free_result($result);
     return $item;
 }
-
+$currentName = 'Новости';
 $categories = selectAllCategories();
 $news = selectSidebarNews();
 if($categories === false || $news === false){
