@@ -43,12 +43,13 @@
 			</div>
 			<nav class="footer-nav">
 				<ul class="footer-nav__list">
-					<li class="footer-nav__list-item"><span class="footer-nav__link">Главная</span></li>
-					<li class="footer-nav__list-item"><a class="footer-nav__link" href="catalog.html">Каталог</a></li>
-					<li class="footer-nav__list-item"><a class="footer-nav__link" href="#">О компании</a></li>
-					<li class="footer-nav__list-item"><a class="footer-nav__link" href="#">Новости</a></li>
-					<li class="footer-nav__list-item"><a class="footer-nav__link" href="shipment.html">Доставка и оплата</a></li>
-					<li class="footer-nav__list-item"><a class="footer-nav__link" href="contacts.html">Контакты</a></li>
+                    <?php
+                    foreach ($menu as $key => $item) {
+                        ?>
+                        <li class="footer-nav__list-item"><a class="footer-nav__link" href="<?=$item?>"><?=$key?></a></li>
+                    <?
+                    }
+                    ?>
 				</ul>
 			</nav>
 			<div class="developer">
