@@ -18,11 +18,11 @@ if($categories === false || $news === false || $products === false){
     <form class="search-filter" id="catalog-page__search-filter-1" method="GET">
                 <span class="search-filter__item">
                     <label class="search-filter__label" for="cost-from">Цена</label>
-                    <input class="search-filter__input" step="0.01" type="number" min="0" name="cost-from" id="cost-from" placeholder="от" value="<?= $_GET['cost-from']?>">
+                    <input class="search-filter__input" step="0.01" type="number" min="0" name="cost-from" id="cost-from" placeholder="от" value="<?= clearInt($_GET['cost-from'])?>">
                 </span>
         <span class="search-filter__item">
                     <label class="search-filter__label" for="cost-to">—</label>
-                    <input class="search-filter__input" type="number" min="0" name="cost-to" id="cost-to" placeholder="до" value="<?= $_GET['cost-to']?>">
+                    <input class="search-filter__input" type="number" min="0" name="cost-to" id="cost-to" placeholder="до" value="<?= clearInt($_GET['cost-to'])?>">
                 </span>
         <input class="form-submit search-filter__apply" type="submit" value="Применить">
     </form>
