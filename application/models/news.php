@@ -13,7 +13,4 @@ $currentName = 'Новости';
 $categories = selectAllCategories();
 $news = selectSidebarNews();
 $newsCatalog = selectNews($_GET['page']?clearInt($_GET['page']):1);
-if($categories === false || $news === false){
-echo "ERROR!";
-exit;
-}
+

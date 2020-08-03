@@ -1,4 +1,9 @@
-
+<?php
+if($categories === false || $news === false){
+    echo "ERROR!";
+    exit;
+}
+?>
 
 <main class="inside-content">
     <h1 class="invisible">Список новостей</h1>
