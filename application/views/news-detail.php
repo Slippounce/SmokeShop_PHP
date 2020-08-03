@@ -1,3 +1,10 @@
+<?php
+if($categories === false || $news === false){
+    echo "ERROR!";
+    exit;
+}
+?>
+
 <main class="inside-content">
     <h1 class="contacts-page__main-headline"><?= $currentNew['name']?></h1>
     <p><?= $currentNew['announcement']?></p>
