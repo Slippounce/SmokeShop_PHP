@@ -12,9 +12,6 @@ if($categories === false || $news === false){
     echo "ERROR!";
     exit;
 }
-?>
-
-<?php
 require "application/views/includes/template_header.php"
 ?>
         <main class="inside-content">

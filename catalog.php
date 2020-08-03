@@ -18,9 +18,6 @@ if($_GET['page'] && !is_numeric($_GET['page'])){
 }
 
 require "application/models/catalog.php";
-?>
-
-<?php
 require "application/views/includes/template_header.php";
 require "application/views/catalog.php";
 require "application/views/includes/template_footer.php";

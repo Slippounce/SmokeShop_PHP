@@ -9,10 +9,7 @@ if(count($_GET) != 0){
         send404();
     }
 }
-require "application/models/contacts.php"
-?>
-<?php
+require "application/models/contacts.php";
 require "application/views/includes/template_header.php";
 require "application/views/contacts.php";
 require "application/views/includes/template_footer.php";
-?>

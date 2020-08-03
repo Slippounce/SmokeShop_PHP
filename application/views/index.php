@@ -5,7 +5,7 @@
         foreach($categories as $category){
             ?>
             <li class="category">
-                <a class="category__link" href="#">
+                <a class="category__link" href="catalog.php?id=<?=$category['id']?>">
                     <img class="category__image" src="<?= $category['image']?>" alt="category-image-1">
                     <span class="category__name-container"><span class="category__name-inner"><?= $category['name']?></span></span>
                 </a>

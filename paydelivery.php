@@ -12,9 +12,6 @@ if($categories === false || $news === false){
 if(count($_GET) != 0){
     send404();
 }
-
-?>
-<?php
 require "application/views/includes/template_header.php"
 ?>
 <main class="inside-content">

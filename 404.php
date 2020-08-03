@@ -15,10 +15,6 @@ if(!count($categories) || !count($news)){
     echo "EMPTY!";
     exit;
 }
-
-?>
-
-<?php
 require "application/views/includes/template_header.php"
 ?>
 <main class="categories">
