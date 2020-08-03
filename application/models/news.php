@@ -17,4 +17,3 @@ if($categories === false || $news === false){
 echo "ERROR!";
 exit;
 }
-?>

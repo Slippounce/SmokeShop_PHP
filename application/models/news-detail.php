@@ -17,4 +17,3 @@ if($categories === false || $news === false){
     exit;
 }
 $currentNew = getNewsById($_GET['id']);
-?>
