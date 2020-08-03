@@ -1,6 +1,6 @@
 <?php
 //сюда можно сложить какие-то вспомогательные функции, функции для подключения к БД с возвратом дескриптора
-require "includes/config.php";
+
 function clearStr($data){
     global $link;
     $data = trim(strip_tags($data));

@@ -1,7 +1,7 @@
 <?php
 //контроллер для списка товаров. проверяем корректность параметров и подключаем соответствующую модель
-require "includes/lib.php";
 require "includes/config.php";
+require "includes/lib.php";
 require "includes/dbconn.php";
 // проверить параметры
 if($_GET['id'] && !is_numeric($_GET['id'])){

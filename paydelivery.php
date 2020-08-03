@@ -1,6 +1,6 @@
 <?php
-require "includes/lib.php";
 require "includes/config.php";
+require "includes/lib.php";
 require "includes/dbconn.php";
 $currentName = 'Доставка и оплата';
 $categories = selectAllCategories();

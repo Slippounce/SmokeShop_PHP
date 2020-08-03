@@ -1,6 +1,6 @@
 <?php
-require "includes/lib.php";
 require "includes/config.php";
+require "includes/lib.php";
 require "includes/dbconn.php";
 if(!$_GET['id'] || !is_numeric($_GET['id'])){
         send404();
