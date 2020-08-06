@@ -31,7 +31,7 @@ function selectProducts($costFrom, $costTo, $categoryId, $page){
 
         }
     }
-    $sql = $sql." limit ".strval(($page-1)*PRODUCTS_ON_PAGE)." , ".PRODUCTS_ON_PAGE;
+//    $sql = $sql." limit ".strval(($page-1)*PRODUCTS_ON_PAGE)." , ".PRODUCTS_ON_PAGE;
     if(!$result = mysqli_query($link, $sql)){
         return false;
     }
@@ -43,7 +43,9 @@ $currentName = 'Каталог';
 $pageCurrent = $_GET['page']?clearInt($_GET['page']):1;
 $categories = selectAllCategories();
 $news = selectSidebarNews();
-$products = selectProducts(clearInt($_GET['cost-from']), clearInt($_GET['cost-to']), clearInt($_GET['id']), $pageCurrent);
+$productsAll = selectProducts(clearInt($_GET['cost-from']), clearInt($_GET['cost-to']), clearInt($_GET['id']), $pageCurrent);
+$products = array_slice($productsAll,  ($pageCurrent-1)*PRODUCTS_ON_PAGE , PRODUCTS_ON_PAGE);
+
 
 
 
