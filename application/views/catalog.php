@@ -6,8 +6,6 @@ if($categories === false || $news === false || $products === false){
     exit;
 }
 ?>
-
-<main class="inside-content">
     <h1 class="invisible">Каталог товаров</h1>
     <nav class="bread-crumbs-container">
         <ul class="bread-crumbs">
@@ -65,6 +63,5 @@ if($categories === false || $news === false || $products === false){
         }
         ?>
     </ul>
-</main>
 
 

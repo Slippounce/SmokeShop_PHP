@@ -1,4 +1,4 @@
-
+</main>
 <div class="sidebar">
     <section class="catalog">
         <h2 class="sidebar__headline">Каталог</h2>

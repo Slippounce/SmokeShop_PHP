@@ -5,7 +5,6 @@ if($categories === false || $news === false){
 }
 ?>
 
-<main class="inside-content">
     <h1 class="invisible">Список новостей</h1>
     <nav class="bread-crumbs-container">
         <ul class="bread-crumbs">
@@ -27,4 +26,3 @@ if($categories === false || $news === false){
         }
         ?>
     </ul>
-</main>

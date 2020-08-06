@@ -5,7 +5,6 @@ if($categories === false || $news === false){
 }
 ?>
 
-<main class="categories">
     <h1 class="invisible">Company - Электронные сигареты</h1>
     <ul class="categories">
         <?php
@@ -21,4 +20,3 @@ if($categories === false || $news === false){
         }
         ?>
     </ul>
-</main>

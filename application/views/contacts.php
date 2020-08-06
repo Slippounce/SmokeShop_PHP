@@ -1,4 +1,4 @@
-<main class="inside-content">
+
     <h1 class="contacts-page__main-headline">Контакты</h1>
     <table class="contacts-section">
         <tbody>
@@ -98,4 +98,3 @@
         ?>
 
     </section>
-</main>

@@ -68,3 +68,4 @@ require "includes/config.php";
 	</header>
 <div class="content">
     <div class="wrapper content__wrapper">
+        <main class="<?php if($currentName === 'О компании' || $currentName === 'Главная'){echo "categories";}else{echo "inside-content";}?>">
