@@ -51,7 +51,10 @@ if($categories === false || $news === false || $products === false){
         }
         for ($i = $istart; $i <= $pageNumber && $i <= $istart + 6; $i++){
             ?>
-            <li class="paginator__elem"><a href="<?="catalog.php?page="."$i";?>" class="paginator__link"><?=$i?></a></li>
+            <li class="paginator__elem"><a href="<?="catalog.php?page="."$i"
+                .($_GET['id']?"&id=".clearInt($_GET['id']):"")
+                .($_GET['cost-from']?"&cost-from=".clearInt($_GET['cost-from']):"")
+                .($_GET['cost-to']?"&cost-to=".clearInt($_GET['cost-to']):""); ?>" class="paginator__link"><?=$i?></a></li>
             <?
         }
         ?>
