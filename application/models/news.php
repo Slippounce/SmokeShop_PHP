@@ -1,7 +1,7 @@
 <?php
-function selectNews($page){
+function selectNews(){
     global $link;
-    $sql = "select * from news order by date desc limit ".strval(($page-1)*NEWS_ON_PAGE)." , ".NEWS_ON_PAGE;
+    $sql = "select * from news order by date desc";
     if(!$result = mysqli_query($link, $sql)){
         return false;
     }
@@ -12,5 +12,8 @@ function selectNews($page){
 $currentName = 'Новости';
 $categories = selectAllCategories();
 $news = selectSidebarNews();
-$newsCatalog = selectNews($_GET['page']?clearInt($_GET['page']):1);
+$newsByRequest = selectNews();
+
+$newsCatalog = array_slice($newsByRequest,  (($_GET['page']?clearInt($_GET['page']):1)-1)*NEWS_ON_PAGE , NEWS_ON_PAGE);
+
 
